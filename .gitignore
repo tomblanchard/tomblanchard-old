@@ -4,3 +4,4 @@ _posts
 _site
 node_modules
 _grunt.bat
+_grunt-upload.bat
