@@ -1,0 +1,25 @@
+paginate: 6
+permalink: /:categories/:title/
+exclude: ['node_modules', 'Gruntfile.js', 'package.json', '.sass-cache', 'README.md']
+encoding: utf-8
+pygments: true
+
+testimonials:
+  - content: 'I have hired Tom frequently to take care of any development based work which passes through Three29Design. Tom gets the job done quickly and properly each time, he’s also happy to try new things out if need be. Both me and my clients are pleased, so that’s job well done!'
+    name: 'Livia Lucie'
+    company: 'Three29Design'
+
+  - content: 'I have been happy to work with Tom over the past couple of years on a large variety of website design and development projects, with a great consultation process and patience which is extremely friendly and efficient to an end result of a successful project.'
+    name: 'David Zinyama'
+    company: '1090 Media'
+
+  - content: 'As the owner of a design and print company, I had high expectations for the look and functionality of our ecommerce website. Tom met and exceeded my expectations. He has worked on multiple projects for the site, all with excellent results, a top notch web developer!'
+    name: 'Chris Burns'
+    company: 'CB Designs &amp; Printing, Inc.'
+
+services:
+  - 'Responsive, mobile-first front-end web development (HTML5, CSS3 / Sass, JS / jQuery, attention to detail)'
+  - 'CMS theme / plugin development / customisation (WordPress, Big Cartel, Tumblr, Jekyll etc.)'
+  - 'E-commerce integration'
+  - 'Social network layout development (Facebook, Soundclick etc.)'
+  - 'General web development consultation'

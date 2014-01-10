@@ -1,0 +1,67 @@
+---
+layout: default
+permalink: contact/index.php
+title: Contact - Get in touch with me, hire a web developer
+
+# To edit this file locally, change the permalink file extension to '.html' and
+# HTML comment out any PHP code. When done editing change the permalink file
+# extension back to '.php' and remove the HTML comments from any PHP code.
+---
+
+<article>
+  <div class="row">
+    <p>For quick enquiries or if you just want to introduce yourself you’re better off sending me a tweet at <a href="http://twitter.com/tomblanchardCSS" target="_blank">@tomblanchardcss</a>. For everything else, just fill out the form below and I’ll respond within a couple of days. Alternatively you can send me an email at <a href="mailto:yo@tomblanchard.co.uk">yo@tomblanchard.co.uk</a>.</p>
+  </div>
+
+  <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $name = trim(stripslashes($_POST['name']));
+      $email = trim(stripslashes($_POST['email']));
+      $subject = trim(stripslashes($_POST['subject']));
+      $message = trim(stripslashes($_POST['message']));
+
+      $email_from = $email;
+      $email_to = 'yo@tomblanchard.co.uk';
+
+      $body = '<html><head></head><body>' .
+              '<b>Name:</b> ' . $name . '<br><br>' .
+              '<b>Email:</b> ' . $email . '<br><br>' .
+              '<b>Nature of Enquiry:</b> ' . $subject . '<br><br>' .
+              '<b>Message:</b> ' . nl2br($message) .
+              '</body></html>';
+
+      $headers = "From: " . strip_tags($email_from) . "\r\n";
+      $headers .= "Reply-To: ". strip_tags($email_from) . "\r\n";
+      $headers .= "MIME-Version: 1.0\r\n";
+      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+      if( isset($_POST['checkbox']) ) {
+        mail($email_to, $subject, $body, $headers);
+        echo '<div class="row"><p><b>Your email was successfully sent! I will get back to you within a couple of days.</b></p></div>';
+      } else {
+        echo '<div class="row"><p><b>It appears you are a spambot, if this is a mistake please try again and check the "I am not a spambot" checkbox.</b></p></div>';
+      }
+    }
+  ?>
+
+  <form class="contact-form grid" method="post" action="#">
+    <div class="grid__item grid__item--v-space lap-and-up-three-tenths">
+      <label class="contact-form__label headline gamma" for="name">Name</label>
+      <input class="contact-form__text" type="text" placeholder="Awesome John" id="name" name="name" value="<?php echo $name; ?>" required>
+      <label class="contact-form__label headline gamma" for="email">Email Address</label>
+      <input class="contact-form__text" type="email" placeholder="john@awesomeclient.com" id="email" name="email" value="<?php echo $email; ?>" required>
+      <label class="contact-form__label headline gamma" for="subject">Nature of Enquiry</label>
+      <input class="contact-form__text" type="text" placeholder="I Require Awesomeness!" id="subject" name="subject" value="<?php echo $subject; ?>" required>
+      <div class="contact-form__checkbox-wrap">
+        <label class="contact-form__label--checkbox" for="checkbox">I am not a spambot</label>
+        <input class="contact-form__checkbox" type="checkbox" id="checkbox" name="checkbox">
+      </div>
+    </div><!--
+
+ --><div class="grid__item lap-and-up-seven-tenths">
+      <label class="contact-form__label headline gamma" for="message">Message</label>
+      <textarea class="contact-form__text contact-form__textarea" id="message" name="message" required><?php echo $message; ?></textarea>
+      <button class="contact-form__submit button" type="submit">Submit</button>
+    </div>
+  </form>
+</article>

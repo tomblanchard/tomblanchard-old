@@ -1,0 +1,20 @@
+.site-nav {
+  padding-top:em(20px);
+  line-height:1;
+}
+
+  .site-nav__item {
+    font-style:italic;
+    font-weight:bold;
+    font-size:em(20px);
+    text-transform:lowercase;
+
+    & + & {
+      margin-left:30px;
+    }
+
+    a {
+      color:#FFF;
+    }
+
+  }

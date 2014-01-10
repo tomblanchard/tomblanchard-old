@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+
+/**
+ * Setup
+ */
+@import "vars";
+@import "inuit.css/inuit";
+
+
+
+
+
+/**
+ * She’s all yours, cap’n... Begin importing your stuff here.
+ */
+@import "ui/page";
+@import "ui/objects";
+@import "ui/header";
+@import "ui/nav";
+@import "ui/body";
+@import "ui/featured-project";
+@import "ui/work";
+@import "ui/blog";
+@import "ui/pagination";
+@import "ui/contact";
+@import "ui/footer";

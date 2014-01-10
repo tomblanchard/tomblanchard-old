@@ -1,0 +1,33 @@
+.featured-project {
+  display:block;
+  background-color:$base-ui-color;
+  font-style:italic;
+  padding:3px;
+  text-align:center;
+
+  &,
+  &:hover {
+    color:#FFF;
+  }
+
+}
+
+  .featured-project__mask {
+    background-color:#FFF;
+    max-height:em(350px);
+    overflow:hidden;
+  }
+
+  .featured-project__img {
+    width:100%;
+    margin-top:-30%;
+
+    .featured-project:hover & {
+      opacity:1;
+    }
+
+    @include media-query(lap-and-up) {
+      margin-top:0;
+    }
+
+  }

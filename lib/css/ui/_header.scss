@@ -1,0 +1,57 @@
+.site-head {
+  position:relative;
+  z-index:1;
+  background:url(../img/avatar.jpg) top center no-repeat $base-ui-color;
+  height:em(300px);
+  @include vendor(background-size, cover);
+  text-shadow:2px 2px 1px #000;
+
+  @include media-query(lap-and-up) {
+    height:em(500px);
+    background-image:url(../img/lap-and-up-avatar.jpg);
+  }
+
+}
+
+  .site-head__wrap {
+    background-color:rgba(0,0,0,0.25);
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:em(26px) 0;
+
+    @include media-query(palm) {
+      font-size:.85em;
+    }
+
+    @include media-query(lap-and-up) {
+      padding:em(26px) 0 em(66px);
+    }
+  }
+
+  .site-head__logo,
+  .site-head__tag {
+    line-height:1;
+    margin:0;
+  }
+
+  .site-head__logo,
+  .site-head__logo a,
+  .site-head__tag {
+    color:#FFF;
+  }
+
+  .site-head__logo {
+    font-size:em(44px);
+    font-family:$logo-font;
+    font-style:normal;
+    line-height:.75;
+    text-shadow:4px 3px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom:10px;
+  }
+
+  .site-head__tag {
+    font-size:em(16px);
+    font-weight:bold;
+  }

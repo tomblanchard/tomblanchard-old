@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{% if page.category == 'work' %}
+
+
+
+  {% for post in paginator.posts %}
+
+    {% include work-item.html %}
+
+  {% endfor %}
+
+
+
+{% elsif page.category == 'blog' %}
+
+
+
+  {% for post in paginator.posts %}
+
+    {% capture modulo %}{{ forloop.index0 | mod:2 }}{% endcapture %}
+
+    {% if modulo == '0' or forloop.first %}
+      <div class="row"><div class="grid">
+    {% endif %}
+
+      {% include blog-post.html %}
+
+    {% if modulo == '1' or forloop.last %}
+      </div></div>
+    {% endif %}
+
+  {% endfor %}
+
+
+
+{% endif %}
+
+
+{% if page.grouptype == 'category' %}
+  {% capture paging_root %}/{{page.category}}/{% endcapture %}
+{% else %}
+  {% capture paging_root %}/{% endcapture %}
+{% endif %}
+
+{% if paginator.total_posts > paginator.per_page %}
+  <footer class="pagination row">
+    <nav>
+      {% if paginator.next_page %}
+        <a class="pagination__link pagination__link--older" href="{{ paging_root }}page{{ paginator.next_page }}">Older</a>
+      {% else %}
+        <span class="pagination__link pagination__link--disabled pagination__link--older">Older</span>
+      {% endif %}
+      {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a class="pagination__link pagination__link--newer" href="{{ paging_root }}">Newer</a>
+      {% else %}
+        <a class="pagination__link pagination__link--newer" href="{{ paging_root }}page{{ paginator.previous_page }}">Newer</a>
+      {% endif %}
+      {% else %}
+        <span class="pagination__link pagination__link--disabled pagination__link--newer">Newer</span>
+      {% endif %}
+    </nav>
+  </footer>
+{% endif %}
+
+{% assign type = nil %}
+{% assign paging_root = nil %}

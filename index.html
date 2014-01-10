@@ -1,0 +1,29 @@
+---
+layout: default
+title: Freelance Front-end Web Developer, North Lincolnshire
+---
+
+<article class="grid">
+  <div class="grid__item grid__item--v-space lap-and-up-seven-tenths">
+    <h1 class="accessibility">About Me &amp; What I Do</h1>
+
+    <p>Hello all, I’m Tom and I have a passion for building awesome websites for awesome people. I specialise in the development of <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>WordPress</strong> and <strong>Responsive Design</strong>, so the sites I develop are accessible across a wide range of devices and viewports.</p>
+
+    <p>When I take on any new project my aim is to deliver the absolute highest quality code available, I make sure of this by handwriting clean, semantic, W3C valid, cross-browser compatible code which I test and debug until everything works as smoothly as possible.</p>
+
+    <p>If you are interested in working with me on a project I am available for freelance work so don’t hesitate to <a href="/contact">get in touch with</a> me so we can get the ball rolling.</p>
+  </div><!--
+
+--><div class="grid__item lap-and-up-three-tenths">
+    {% for post in site.categories.work %}
+      {% if post.featured %}
+        <a class="featured-project" href="{{ post.url }}">
+          <div class="featured-project__mask">
+            <img class="featured-project__img" src="/lib/img/featured-project.jpg" alt="{{ post.title | escape }}">
+          </div>
+          <div class="featured-project__text">Featured Project</div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</article>

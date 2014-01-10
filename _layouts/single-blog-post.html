@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="grid">
+  <article class="blog-item grid__item lap-and-up-seven-tenths">
+    <div class="palm-row">
+      <img class="blog-item__single-img" src="/lib/img/blog/{{ page.image }}" alt="{{ page.title }}">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </div>
+  </article><!--
+--><aside class="blog-item grid__item lap-and-up-three-tenths">
+    <time class="headline blog-item__date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+      Published on {% assign d = page.date | date: '%-d'  %}
+      {{ page.date | date: '%A' }}, the
+      {% case d %}
+        {% when '1' or '21' or '31' %}{{ d }}st
+        {% when '2' or '22' %}{{ d }}nd
+        {% when '3' or '23' %}{{ d }}rd
+        {% else %}{{ d }}th
+      {% endcase %} of
+      {{ page.date | date: '%B' }},
+      {{ page.date | date: '%Y' }}
+    </time>
+    <div class="minimize">
+      <p>Got a comment or question? If so, send me a tweet at <a href="http://twitter.com/tomblanchardCSS" target="_blank">@tomblanchardcss</a> or email me at <a href="mailto:yo@tomblanchard.co.uk">yo@tomblanchard.co.uk</a>.</p>
+    </div>
+  </aside>
+</div>

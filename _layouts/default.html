@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    Tom Blanchard ::
+    {% if page.category == 'work' %}
+      Work - {% if page.grouptype == 'category' %}A small selection of projects I have had the pleasure of working on{% endif %}
+    {% elsif page.category == 'blog' %}
+      Blog - {% if page.grouptype == 'category' %}Updates, thoughts and endless ramblings on{% endif %}
+    {% endif %}
+    {{ page.title }}
+  </title>
+
+  {% if page.url == '/index.html' %}
+    {% assign description = 'Need a skilled, experienced, reliable front-end web developer? I&#039;m your man, I specialise in the development of HTML5, CSS3, WordPress &amp; Responsive Design' %}
+  {% elsif page.category == 'work' %}
+    {% assign description = 'A small selection of projects I have had the pleasure of working on' %}
+  {% elsif page.category == 'blog' %}
+    {% assign description = 'My personal web development blog, here you will find my thoughts on various development trends, experimental projects and general thoughts on the industry' %}
+  {% elsif page.url == '/contact/index.php' %}
+    {% assign description = 'If you are interested in working with me on a project or just want to ask a few questions just get in touch with me' %}
+  {% endif %}
+  <meta name="description" content="{{ description }}">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Enriqueta:700&amp;text=TomBlanchrd">
+
+  <link rel="stylesheet" href="/lib/css/style.min.css">
+
+  <!--[if lt IE 9]><script src="/lib/js/html5shiv.min.js"></script><![endif]-->
+</head>
+<body {% if page.url == '/index.html' %}class="page--home"{% endif %}>
+
+  {% include header.html %}
+
+  <main class="wrapper" role="main">
+    <div class="site-body island">
+      <h2 class="row site-body__title {% if page.url == '/index.html' %}site-body__title--home{% endif %}"><span>
+        {% if page.url == '/index.html' %}
+          Yo! I’m Tom Blanchard, a freelance front-end web developer based in North Lincolnshire
+        {% elsif page.category == 'work' %}
+          A small selection of projects I have had the pleasure of working on
+        {% elsif page.category == 'blog' %}
+          My updates, thoughts, experimental projects and endless ramblings on
+        {% elsif page.url == '/contact/index.php' %}
+          New emails are awesome so don't hesitate to get in touch with me
+        {% endif %}
+      </span></h2>
+
+      {{ content }}
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <script src="/lib/js/main.min.js"></script>
+  <script>(function(e,t,n,r,i,s,o){e["GoogleAnalyticsObject"]=i;e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=1*new Date;s=t.createElement(n),o=t.getElementsByTagName(n)[0];s.async=1;s.src=r;o.parentNode.insertBefore(s,o)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-34697756-2","tomblanchard.co.uk");ga("send","pageview");</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.pagination {
+  text-align:center;
+}
+
+  .pagination__link {
+    font-weight:bold;
+    font-style:italic;
+    font-size:em(18px);
+  }
+
+  .pagination__link--older {
+    margin-right:em(40px, 18px);
+    &:before {
+      content:'\2190\ ';
+    }
+  }
+
+  .pagination__link--newer {
+    &:after {
+      content:' \2192';
+    }
+  }
+
+  .pagination__link--disabled {
+    color:#000;
+    opacity:.3;
+    pointer-events:none;
+    font-weight:normal;
+  }

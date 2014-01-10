@@ -1,0 +1,90 @@
+.site-foot {
+  padding:em(40px) 0;
+}
+
+  .site-foot__content {
+    margin-bottom:em(40px);
+    background:url(../img/footer.jpg) top center no-repeat $base-ui-color;
+    @include vendor(background-size, cover);
+    overflow:hidden;
+
+    @include media-query(lap-and-up) {
+      background-image:url(../img/lap-and-up-footer.jpg);
+      background-position:top left;
+    }
+  }
+
+  .site-foot__item,
+  .site-foot__item-head {
+    background-color:$base-ui-color;
+    background-color:rgba(0,0,0, .25);
+  }
+
+  .site-foot__item {
+    color:#FFF;
+    text-shadow:2px 2px 1px #000;
+
+    @include media-query(lap-and-up) {
+      margin-bottom:em(-1960px);
+      padding-bottom:em(2000px);
+    }
+  }
+
+    .site-foot__item-head {
+      margin-bottom:em(15px);
+
+      h2 {
+        color:#FFF;
+        padding:2px 0;
+        margin-bottom:0;
+      }
+    }
+
+    .site-foot__item-list {
+      margin:0;
+      padding-left:7px;
+    }
+
+    .site-foot__item-quote {
+      margin-bottom:0;
+      @extend %fade-transition;
+      opacity:0;
+      position:absolute;
+      top:-9999px;
+      left:-9999px;
+    }
+
+    .site-foot__item-quote--current {
+      opacity:1;
+      position:static;
+    }
+
+      .site-foot__item-quote-foot {
+        margin-top:em(15px);
+
+        &:before {
+          content:'\2013\ ';
+          margin-right:em(3px);
+        }
+      }
+
+      .site-foot__item-quote-next {
+        display:block;
+        margin-top:em(20px);
+        text-align:right;
+
+        &,
+        &:hover {
+          color:#FFF;
+        }
+
+        &:after {
+          content:' \003E';
+        }
+      }
+
+  .site-foot__credit {
+    color:$base-ui-color;
+    font-style:italic;
+    font-weight:bold;
+  }

@@ -1,0 +1,28 @@
+.blog-item {
+}
+
+  .blog-item__img {
+    margin-bottom:em(15px);
+
+    .blog-item:hover & {
+      opacity:1;
+    }
+  }
+
+  .blog-item__single-img {
+    margin-bottom:em(32px);
+  }
+
+  .blog-item__head {
+    margin-bottom:em(9px);
+
+    h2 {
+      margin-bottom:0;
+    }
+  }
+
+  .blog-item__date {
+    display:block;
+    line-height:1.7;
+    margin-bottom:em(7px);
+  }

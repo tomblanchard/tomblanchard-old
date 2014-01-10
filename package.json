@@ -1,0 +1,21 @@
+{
+  "name": "tomblanchard.co.uk",
+  "title": "Jekyll build for tomblanchard.co.uk",
+  "url": "http://tomblanchard.co.uk",
+  "author": "Tom Blanchard",
+  "copyright": "2014",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-jekyll": "~0.4.1",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-htmlmin": "~0.1.3",
+    "grunt-contrib-copy": "~0.5.0",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-ftp-deploy": "~0.1.1"
+  }
+}

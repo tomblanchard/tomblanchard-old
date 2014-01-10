@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="work-item">
+  <div class="grid">
+    <div class="grid__item grid__item--v-space lap-and-up-seven-tenths">
+      {% for image in page.images %}
+        <img class="work-item__img" src="/lib/img/work/{{ image }}" alt="{{ page.title }} Section {{ forloop.index }}">
+      {% endfor %}
+      <ul class="work-item__tags">
+        {% for tag in page.tags %}
+          <li class="work-item__tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div><!--
+ --><div class="grid__item lap-and-up-three-tenths">
+      <div class="work-item__head">
+        <h2>{{ page.title }}</h2>
+      </div>
+      <div class="minimize">
+        {{ content }}
+        {% if page.site %}
+          <p class="work-item__view"><a class="button" href="{{ page.site }}" target="_blank">View Live</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>

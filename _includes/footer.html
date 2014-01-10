@@ -1,0 +1,52 @@
+<footer class="site-foot" role="contentinfo">
+  <div class="site-foot__content">
+    <div class="wrapper">
+      <div class="grid">
+        <div class="grid__item grid__item--v-space lap-and-up-one-half">
+          <div class="site-foot__item island">
+            <div class="site-foot__item-head island__bleed">
+              <h2>How I Can Help You</h2>
+            </div>
+            <div class="minimize">
+              <ul class="site-foot__item-list">
+                {% for service in site.services %}
+                  <li>{{ service }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div><!--
+     --><div class="grid__item lap-and-up-one-half">
+          <div class="site-foot__item island">
+            <div class="site-foot__item-head island__bleed">
+              <h2>What My Clients Say</h2>
+            </div>
+            <div class="minimize">
+              <div class="site-foot__item-quotes">
+                {% for testimonial in site.testimonials %}
+                  <blockquote class="site-foot__item-quote site-foot__item-quote--{{ forloop.index }} {% if forloop.index == 1 %}site-foot__item-quote--current{% endif %}">
+                    {{ testimonial.content | markdownify }}
+                    <div class="site-foot__item-quote-foot">
+                      <i><b>{{ testimonial.name }}</b> of {{ testimonial.company }}</i>
+                      <a class="site-foot__item-quote-next" href="#">Next Testimonial</a>
+                    </div>
+                  </blockquote>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-foot__credit wrapper">
+    <div class="grid">
+      <div class="text-wrap-left grid__item lap-and-up-one-half">
+        Copyright &copy; {{ site.time | date: '%Y' }}
+      </div><!--
+   --><div class="text-wrap-right grid__item lap-and-up-one-half">
+        Designed &amp; Built by Tom Blanchard
+      </div>
+    </div>
+  </div>
+</footer>
