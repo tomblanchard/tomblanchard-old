@@ -139,14 +139,6 @@ module.exports = function(grunt) {
       }
     },
 
-
-
-
-
-
-
-
-
     /**
      * Upload new site files to server
      */
@@ -159,9 +151,7 @@ module.exports = function(grunt) {
         },
         src: '_site',
         dest: '/public_html/root',
-        exclusions: ['page*'],
-        simple: false,
-        useList: false
+        exclusions: ['page*', '!**/*/page*']
       }
     },
 
@@ -177,14 +167,6 @@ module.exports = function(grunt) {
         ].join('&&')
       }
     }
-
-
-
-
-
-
-
-
 
 
   });
