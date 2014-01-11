@@ -43,7 +43,7 @@ title: Contact - Get in touch with me, hire a web developer
       }
     }
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST' && ! isset($_POST['checkbox']) ) {
+    if(! isset($_POST['checkbox']) ) {
   ?>
 
     <form class="contact-form grid" method="post" action="#">
