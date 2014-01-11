@@ -143,7 +143,7 @@ module.exports = function(grunt) {
      * Upload new site files to server
      */
     ftpush: {
-      build: {
+      dist: {
         auth: {
           host: 'tomblanchard.co.uk',
           port: 21,
@@ -180,7 +180,7 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('upload', [
+  grunt.registerTask('push', [
     'ftpush',
     'shell'
   ]);
