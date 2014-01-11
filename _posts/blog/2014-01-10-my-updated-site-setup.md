@@ -14,6 +14,8 @@ excerpt: "This site has been live for quite a while now (around six months) and 
 
 Anyway, out with the old, in with the new, from the outside this site is no different to how it was six months ago, it looks exactly the same, however, how I maintain it has changed dramatically and I couldn't be happier as it makes publishing content not such a drag.
 
+## Embracing Jekyll
+
 I wanted this site to run a lot like a WordPress powered site (which is a lot to ask for with a static site generator), the main things being custom post types and category archives. Setting up the "custom post types" (quoted because they're just categories with clever permalinks, using this technique [http://goo.gl/5ZEdhr](http://goo.gl/5ZEdhr)), one for my portfolio work items and one for blog posts. This wasn't that much of a challenge, but I decided I wanted Jekyll category archives along with pagination which threw a spanner in the works because 1: by default Jekyll doesn't automatically generate category archives and 2: pagination only works on the home `index.html`. After a lot of researching I came across this article [http://goo.gl/uXF48J](http://goo.gl/uXF48J) which solved these problems (with a little tweaking).
 
 Another thing which I ran into problems with was the HTML structure of my blog post archive pages as they were nested in grids and rows, simplified I needed my post `for` loop to output posts like this (simplified):
@@ -46,8 +48,14 @@ When I thought I'd got my perfect Jekyll setup with the new site I was going thr
 
 Pretty cool huh!?
 
+## jQuery - be gone!
+
 Another idea I've been toying with recently was dropping jQuery from the site because the only reason I was using it was for the testimonial rotator in the footer, so I did it, with a little help from [Todd Motto](http://toddmotto.com)'s [Apollo.js](https://github.com/toddmotto/apollo) (a tiny < 1KB standalone DOM class manipulation API). So the site is now completely jQuery-less, feels good to replace 90KB worth of jQuery (99% of it I wasn't even using) with 1KB worth of relevant vanilla JavaScript.
 
+## Overcoming the fear of Grunt
+
 Last but not least, I have changed my asset workflow (tasks like minification, compilation, linting, etc.) I used to use [Mixture](http://mixture.io) (I still love this app) to compile my Sass to CSS and minify / uglify my JavaScript files manually which was a very cumbersome task. However after a lot of time of being afraid of [Grunt](http://gruntjs.com); the JavaScript task runner I finally tried it out and I couldn't love it more. I use it to compile my Sass, minify / uglify my JavaScript, build my Jekyll site files, minify all the Jekyll site HTML files and then watch all necessary files and run specific tasks when specific files are changed, I do all that in one command `grunt`, so awesome. I could write paragraph after paragraph about Grunt but I'll leave that for another day (post).
+
+## Show me the source!
 
 If you want to poke around the code for this setup, you can see it over on my GitHub here: [tomblanchard.co.uk](http://github.com/tomblanchard/tomblanchard.co.uk).
