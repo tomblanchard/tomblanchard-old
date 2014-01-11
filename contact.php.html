@@ -42,26 +42,31 @@ title: Contact - Get in touch with me, hire a web developer
         echo '<div class="row"><p><b>It appears you are a spambot, if this is a mistake please try again and check the "I am not a spambot" checkbox.</b></p></div>';
       }
     }
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && ! isset($_POST['checkbox']) ) {
   ?>
 
-  <form class="contact-form grid" method="post" action="#">
-    <div class="grid__item grid__item--v-space lap-and-up-three-tenths">
-      <label class="contact-form__label headline gamma" for="name">Name</label>
-      <input class="contact-form__text" type="text" placeholder="Awesome John" id="name" name="name" value="<?php echo $name; ?>" required>
-      <label class="contact-form__label headline gamma" for="email">Email Address</label>
-      <input class="contact-form__text" type="email" placeholder="john@awesomeclient.com" id="email" name="email" value="<?php echo $email; ?>" required>
-      <label class="contact-form__label headline gamma" for="subject">Nature of Enquiry</label>
-      <input class="contact-form__text" type="text" placeholder="I Require Awesomeness!" id="subject" name="subject" value="<?php echo $subject; ?>" required>
-      <div class="contact-form__checkbox-wrap">
-        <label class="contact-form__label--checkbox" for="checkbox">I am not a spambot</label>
-        <input class="contact-form__checkbox" type="checkbox" id="checkbox" name="checkbox">
-      </div>
-    </div><!--
+    <form class="contact-form grid" method="post" action="#">
+      <div class="grid__item grid__item--v-space lap-and-up-three-tenths">
+        <label class="contact-form__label headline gamma" for="name">Name</label>
+        <input class="contact-form__text" type="text" placeholder="Awesome John" id="name" name="name" value="<?php echo $name; ?>" required>
+        <label class="contact-form__label headline gamma" for="email">Email Address</label>
+        <input class="contact-form__text" type="email" placeholder="john@awesomeclient.com" id="email" name="email" value="<?php echo $email; ?>" required>
+        <label class="contact-form__label headline gamma" for="subject">Nature of Enquiry</label>
+        <input class="contact-form__text" type="text" placeholder="I Require Awesomeness!" id="subject" name="subject" value="<?php echo $subject; ?>" required>
+        <div class="contact-form__checkbox-wrap">
+          <label class="contact-form__label--checkbox" for="checkbox">I am not a spambot</label>
+          <input class="contact-form__checkbox" type="checkbox" id="checkbox" name="checkbox">
+        </div>
+      </div><!--
 
- --><div class="grid__item lap-and-up-seven-tenths">
-      <label class="contact-form__label headline gamma" for="message">Message</label>
-      <textarea class="contact-form__text contact-form__textarea" id="message" name="message" required><?php echo $message; ?></textarea>
-      <button class="contact-form__submit button" type="submit">Submit</button>
-    </div>
-  </form>
+   --><div class="grid__item lap-and-up-seven-tenths">
+        <label class="contact-form__label headline gamma" for="message">Message</label>
+        <textarea class="contact-form__text contact-form__textarea" id="message" name="message" required><?php echo $message; ?></textarea>
+        <button class="contact-form__submit button" type="submit">Submit</button>
+      </div>
+    </form>
+
+  <?php } ?>
+
 </article>
