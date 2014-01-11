@@ -159,7 +159,7 @@ module.exports = function(grunt) {
         },
         src: '_site',
         dest: '/public_html/root',
-        exclusions: ['*/page*'],
+        exclusions: ['page*'],
         simple: false,
         useList: false
       }
