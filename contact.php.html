@@ -49,11 +49,11 @@ title: Contact - Get in touch with me, hire a web developer
     <form class="contact-form grid" method="post" action="#">
       <div class="grid__item grid__item--v-space lap-and-up-three-tenths">
         <label class="contact-form__label headline gamma" for="name">Name</label>
-        <input class="contact-form__text" type="text" placeholder="Awesome John" id="name" name="name" value="<?php echo $name; ?>">
+        <input class="contact-form__text" type="text" placeholder="Awesome John" id="name" name="name" value="<?php echo $name; ?>" required>
         <label class="contact-form__label headline gamma" for="email">Email Address</label>
-        <input class="contact-form__text" type="text" placeholder="john@awesomeclient.com" id="email" name="email" value="<?php echo $email; ?>">
+        <input class="contact-form__text" type="email" placeholder="john@awesomeclient.com" id="email" name="email" value="<?php echo $email; ?>" required>
         <label class="contact-form__label headline gamma" for="subject">Nature of Enquiry</label>
-        <input class="contact-form__text" type="text" placeholder="I Require Awesomeness!" id="subject" name="subject" value="<?php echo $subject; ?>">
+        <input class="contact-form__text" type="text" placeholder="I Require Awesomeness!" id="subject" name="subject" value="<?php echo $subject; ?>" required>
         <div class="contact-form__checkbox-wrap">
           <label class="contact-form__label--checkbox" for="checkbox">I am not a spambot</label>
           <input class="contact-form__checkbox" type="checkbox" id="checkbox" name="checkbox">
@@ -62,7 +62,7 @@ title: Contact - Get in touch with me, hire a web developer
 
    --><div class="grid__item lap-and-up-seven-tenths">
         <label class="contact-form__label headline gamma" for="message">Message</label>
-        <textarea class="contact-form__text contact-form__textarea" id="message" name="message"><?php echo $message; ?></textarea>
+        <textarea class="contact-form__text contact-form__textarea" id="message" name="message" required><?php echo $message; ?></textarea>
         <button class="contact-form__submit button" type="submit">Submit</button>
       </div>
     </form>
