@@ -139,10 +139,18 @@ module.exports = function(grunt) {
       }
     },
 
+
+
+
+
+
+
+
+
     /**
      * Upload new site files to server
      */
-    'ftp-deploy': {
+    ftpush: {
       build: {
         auth: {
           host: 'tomblanchard.co.uk',
@@ -151,9 +159,32 @@ module.exports = function(grunt) {
         },
         src: '_site',
         dest: '/public_html/root',
-        exclusions: ['*/page*']
+        exclusions: ['*/page*'],
+        simple: false,
+        useList: false
+      }
+    },
+
+    /**
+     * Upload new site files to GitHub
+     */
+    shell: {
+      git: {
+        command: [
+          'git add -A',
+          'git commit -m "<%= grunt.template.today("isoDateTime") %>"',
+          'git push'
+        ].join('&&')
       }
     }
+
+
+
+
+
+
+
+
 
 
   });
@@ -168,7 +199,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('upload', [
-    'ftp-deploy'
+    'ftpush',
+    'shell'
   ]);
 
 };
