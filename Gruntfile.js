@@ -151,7 +151,8 @@ module.exports = function(grunt) {
         },
         src: '_site',
         dest: '/public_html/root',
-        exclusions: ['page*', '!**/*/page*']
+        exclusions: ['page*', '!**/*/page*'],
+        keep: ['googlea67e882a592198c5.html', 'favicon.ico']
       }
     },
 
