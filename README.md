@@ -1,4 +1,4 @@
-# Personal Portfolio (tomblanchard.co.uk)1
+# Personal Portfolio (tomblanchard.co.uk)
 
 The uncompiled Jekyll source code for [tomblanchard.co.uk](http://tomblanchard.co.uk).
 
