@@ -1,6 +1,6 @@
-.sass-cache
-.ftppass
+.*
+!/.gitignore
 _site
-node_modules
 _grunt.bat
 _grunt-push.bat
+node_modules
