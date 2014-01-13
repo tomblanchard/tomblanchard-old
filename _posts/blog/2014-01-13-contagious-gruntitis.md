@@ -7,10 +7,10 @@ title: Contagious Grunt-itis
 
 image: contagious-gruntitis.gif
 
-excerpt: ""
+excerpt: "If you haven't heard of [Grunt](http://gruntjs.com) (if so, where have you been hiding?), it's a task runner powered by JavaScript and [Node.js](http://nodejs.org), don't worry, you don't have to be a JavaScript / Node.js developer to use Grunt"
 ---
 
-If you haven't heard of [Grunt](http://gruntjs.com) (if so, where have you been hiding?), it's a task runner powered by JavaScript and [Node.js](http://nodejs.org), don't worry, you don't have to be a JavaScript / Node.js developer to use Grunt (just like you don't have to be a [Ruby](http://ruby-lang.org) developer to use [Sass](http://sass-lang.com)). You can use it for a **lot** of things thanks to the community for publishing so many plugins, a couple of examples being [Cssmin](http://github.com/gruntjs/grunt-contrib-cssmin) (CSS compression) and [Uglify](http://github.com/gruntjs/grunt-contrib-uglify) (JavaScript minification).
+{{ page.excerpt }} (just like you don't have to be a [Ruby](http://ruby-lang.org) developer to use [Sass](http://sass-lang.com)). You can use it for a **lot** of things thanks to the community for publishing so many plugins, a couple of examples being [Cssmin](http://github.com/gruntjs/grunt-contrib-cssmin) (CSS compression) and [Uglify](http://github.com/gruntjs/grunt-contrib-uglify) (JavaScript minification).
 
 This post assumes you're at least a little bit familiar with Grunt so I'm not going to write up a tutorial on how to install Grunt and its dependencies, in a nutshell you set up your `Gruntfile.js` file and configure tasks and plugins to do what you want, when you want. When you've got all your tasks set up, you just run the `grunt` command (which runs the default task) and you're all set, or if you have multiple tasks you'd run `grunt task-name`.
 
