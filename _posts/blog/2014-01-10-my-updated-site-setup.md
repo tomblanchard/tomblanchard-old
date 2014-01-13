@@ -12,7 +12,7 @@ excerpt: "This site has been live for quite a while now (around six months) and 
 
 {{ page.excerpt }} any motivation to blog and I think I know why, it was because how awful my setup was, I wasn't using Jekyll to its full potential and in all honesty, I had no idea how to properly implement Jekyll into the new site design. I wasn't even using the built in blog-aware features, the only purpose I was using Jekyll for was for the templating functionality which isn't very smart when it comes to writing blog posts as I was having to code them in HTML every time.
 
-Anyway, out with the old, in with the new, from the outside this site is no different to how it was six months ago, it looks exactly the same, however, how I maintain it has changed dramatically and I couldn't be happier as it makes publishing content not such a drag.
+Anyway, out with the old, in with the new. From the outside this site is no different to how it was six months ago, it looks exactly the same, however, how I maintain it has changed dramatically and I couldn't be happier as it makes publishing content not such a drag.
 
 ## Embracing Jekyll
 
@@ -32,7 +32,7 @@ Another thing which I ran into problems with was the HTML structure of my blog p
 </div>
 {% endhighlight %}
 
-This isn't simple to do, I shamelessly turned to Stack Overflow which gave a few answers, but then I found this after a few days which was pretty much exactly what I needed [http://goo.gl/KmhO0y](http://goo.gl/KmhO0y), it uses modulo functionality to work out which post is which.
+This isn't simple to do, I shamelessly turned to Stack Overflow which gave a few answers, but then I found this after a few days which was pretty much exactly what I needed [http://goo.gl/KmhO0y](http://goo.gl/KmhO0y), it uses `modulo` functionality to work out which post is which.
 
 So now, I have all of my blog posts and work items neatly organised in their own sub-directories in the Jekyll `_posts` directory in properly formatted Markdown files with working archives for each post type, complete with working pagination, smooth!
 
