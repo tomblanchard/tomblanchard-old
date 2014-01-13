@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
   /**
-   * Instead of loading each task one by one using `grunt.loadNpmTasks`, this
-   * automatically loads all dependencies from the `package.json` file.
+   * Instead of loading each task one by one using `grunt.loadNpmTasks`,
+   * automatically load all dependencies from the `package.json` file.
    *
    * Plugin: http://github.com/sindresorhus/load-grunt-tasks
    */
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Uglify (minify) my `main.js` file.
+     * Uglify (minify) `main.js` file.
      *
      * Plugin: http://github.com/gruntjs/grunt-contrib-uglify
      */
@@ -95,9 +95,9 @@ module.exports = function(grunt) {
 
     /**
      * Instead of getting Jekyll to rebuild every time a file in `lib` is changed
-     * (slow), copy replace the old `lib` with the new one in the compiled Jekyll
-     * site directory. This only gets ran during the `watch` task becuase Jekyll
-     * does it on the inital build.
+     * (slow), copy and replace the old `lib` with the new one in the compiled Jekyll
+     * site directory. This only gets ran during the `watch` task because Jekyll
+     * does it on the initial build.
 
      * Plugin: https://github.com/gruntjs/grunt-contrib-copy
      */
@@ -152,8 +152,8 @@ module.exports = function(grunt) {
       },
 
       /**
-       * Watch any HTML files in the compiled Jekyll site directory, if any are modified,
-       * reminify them.
+       * Watch any HTML / PHP files in the compiled Jekyll site directory, if any are
+       * modified, reminify them.
        */
       htmlmin: {
         files: '_site/**/*.{html,php}',
@@ -182,6 +182,12 @@ module.exports = function(grunt) {
      * Upload (and replace the old files) the compiled Jekyll site directory to the
      * server.
      *
+     * 1. For some reason when Jekyll builds the site files, it builds random `pageN`
+     *    directories in the compiled site root directory, this isn't a major problem,
+     *    just an annoyance. This stops these directories getting uploaded to the server.
+     * 2. Certain files which should be kept on the server even when they are not
+     *    presented locally.
+     *
      * Plugin: http://github.com/inossidabile/grunt-ftpush
      */
     ftpush: {
@@ -193,8 +199,8 @@ module.exports = function(grunt) {
         },
         src: '_site',
         dest: '/public_html/root',
-        exclusions: ['page*', '!**/*/page*'],
-        keep: ['googlea67e882a592198c5.html', 'favicon.ico']
+        exclusions: ['page*', '!**/*/page*'], /* [1] */
+        keep: ['googlea67e882a592198c5.html', 'favicon.ico'] /* [2] */
       }
     },
 
@@ -207,12 +213,16 @@ module.exports = function(grunt) {
 
       /**
        * Push the uncompiled Jekyll source code to GitHub.
+       *
+       * 1. Updates the Git index (including deleted files).
+       * 2. Commits any changes, with the commit message as the current date and time.
+       * 3. Pushes changes to the remote repository.
        */
       git: {
         command: [
-          'git add -A',
-          'git commit -m "<%= grunt.template.today("isoDateTime") %>"',
-          'git push'
+          'git add -A', /* [1] */
+          'git commit -m "<%= grunt.template.today("isoDateTime") %>"', /* [2] */
+          'git push' /* [3] */
         ].join('&&')
       }
     }
@@ -221,8 +231,8 @@ module.exports = function(grunt) {
   });
 
   /**
-   * This is the `default` task, it builds / compiles the site, then watches for
-   * changes, then rebuilds / recompiles.
+   * The `default` task, it builds / compiles the site, then watches for changes,
+   * then rebuilds / recompiles.
    *
    * Usage: `grunt` or `grunt default`
    */
@@ -236,8 +246,8 @@ module.exports = function(grunt) {
   ]);
 
   /**
-   * This is the `push` task, it uploads the compiled site to the server then pushes
-   * the uncompiled Jekyll source code to GitHub.
+   * The `push` task, it uploads the compiled site to the server then pushes
+   * uncompiled Jekyll source code to GitHub.
    *
    * Usage: `grunt push`
    */

@@ -172,3 +172,7 @@ $wrapper-start:em(1100px);
 %fade-transition {
   @include vendor(transition, all .3s);
 }
+
+.flow {
+  @extend %sass-margin-bottom;
+}
