@@ -1,10 +1,10 @@
-/**
- * Grunt module
- */
 module.exports = function(grunt) {
 
   /**
-   * Load all npm tasks
+   * Instead of loading each task one by one using `grunt.loadNpmTasks`, this
+   * automatically loads all dependencies from the `package.json` file.
+   *
+   * Plugin: http://github.com/sindresorhus/load-grunt-tasks
    */
   require('load-grunt-tasks')(grunt);
 
@@ -14,7 +14,24 @@ module.exports = function(grunt) {
 
 
     /**
-     * Compile Sass files
+     * Start a local server using the compiled Jekyll site directory as the base.
+     *
+     * Plugin: http://github.com/gruntjs/grunt-contrib-connect
+     */
+    connect: {
+      server: {
+        options: {
+          hostname: '*',
+          port: 12000,
+          base: '_site'
+        }
+      }
+    },
+
+    /**
+     * Compile Sass files to CSS files.
+     *
+     * Plugin: http://github.com/gruntjs/grunt-contrib-sass
      */
     sass: {
       dist: {
@@ -32,7 +49,9 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Uglify (minify) JavaScript files
+     * Uglify (minify) my `main.js` file.
+     *
+     * Plugin: http://github.com/gruntjs/grunt-contrib-uglify
      */
     uglify: {
       dist: {
@@ -43,7 +62,21 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Minify Jekyll output HTML
+     * Build Jekyll site.
+     *
+     * Plugin: http://github.com/dannygarcia/grunt-jekyll
+     */
+    jekyll: {
+      dist: {
+        options: {
+        }
+      }
+    },
+
+    /**
+     * Minify all HTML / PHP files that Jekyll builds.
+     *
+     * Plugin: http://github.com/gruntjs/grunt-contrib-htmlmin
      */
     htmlmin: {
       dist: {
@@ -61,9 +94,12 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Instead of getting Jekyll to rebuild every time a file in "lib" is changed
-     * (slow), replace the old "lib" with the new one via "copy". This only gets
-     * run in the "watch" task becuase Jekyll does it on the inital build.
+     * Instead of getting Jekyll to rebuild every time a file in `lib` is changed
+     * (slow), copy replace the old `lib` with the new one in the compiled Jekyll
+     * site directory. This only gets ran during the `watch` task becuase Jekyll
+     * does it on the inital build.
+
+     * Plugin: https://github.com/gruntjs/grunt-contrib-copy
      */
     copy: {
       lib : {
@@ -76,32 +112,15 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Build Jekyll site
-     */
-    jekyll: {
-      dist: {
-        options: {
-        }
-      }
-    },
-
-    /**
-     * Start server from Jekyll output
-     */
-    connect: {
-      server: {
-        options: {
-          hostname: '*',
-          port: 12000,
-          base: '_site'
-        }
-      }
-    },
-
-    /**
-     * Runs tasks against changed watched files
+     * Runs tasks against changed watched files.
+     *
+     * Plugin: http://github.com/gruntjs/grunt-contrib-watch
      */
     watch: {
+
+      /**
+       * Watch any Sass files, if any are modified, recompile them to CSS.
+       */
       sass: {
         files: 'lib/css/**/*.scss',
         tasks: ['sass'],
@@ -109,6 +128,10 @@ module.exports = function(grunt) {
           spawn: true
         }
       },
+
+      /**
+       * Watch any JavaScript files, if any are modified, reuglify them.
+       */
       uglify: {
         files: 'lib/js/main.js',
         tasks: ['uglify'],
@@ -116,13 +139,10 @@ module.exports = function(grunt) {
           spawn: false
         }
       },
-      htmlmin: {
-        files: '_site/**/*.{html,php}',
-        tasks: ['htmlmin'],
-        options: {
-          spawn: false
-        }
-      },
+
+      /**
+       * Watch any Jekyll related files, if any are modified, rebuild the Jekyll site.
+       */
       jekyll: {
         files: ['_includes/**/*', '_layouts/**/*', '_plugins/**/*', '_posts/**/*', '*.html', '_config.yml'],
         tasks: ['jekyll'],
@@ -130,6 +150,25 @@ module.exports = function(grunt) {
           spawn: false
         }
       },
+
+      /**
+       * Watch any HTML files in the compiled Jekyll site directory, if any are modified,
+       * reminify them.
+       */
+      htmlmin: {
+        files: '_site/**/*.{html,php}',
+        tasks: ['htmlmin'],
+        options: {
+          spawn: false
+        }
+      },
+
+      /**
+       * Watch any files in the `lib` directory, if any are modified, copy and replace
+       * that directory to the compiled Jekyll site directory (instead of getting Jekyll
+       * to rebuild the entire site every time a file in `lib` is modified which is a lot
+       * slower).
+       */
       copy: {
         files: ['lib/**/*'],
         tasks: ['copy'],
@@ -140,7 +179,10 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Upload new site files to server
+     * Upload (and replace the old files) the compiled Jekyll site directory to the
+     * server.
+     *
+     * Plugin: http://github.com/inossidabile/grunt-ftpush
      */
     ftpush: {
       dist: {
@@ -157,9 +199,15 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Upload new site files to GitHub
+     * Run command line tools.
+     *
+     * Plugin: http://github.com/sindresorhus/grunt-shell
      */
     shell: {
+
+      /**
+       * Push the uncompiled Jekyll source code to GitHub.
+       */
       git: {
         command: [
           'git add -A',
@@ -172,6 +220,12 @@ module.exports = function(grunt) {
 
   });
 
+  /**
+   * This is the `default` task, it builds / compiles the site, then watches for
+   * changes, then rebuilds / recompiles.
+   *
+   * Usage: `grunt` or `grunt default`
+   */
   grunt.registerTask('default', [
     'connect',
     'sass',
@@ -181,6 +235,12 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
+  /**
+   * This is the `push` task, it uploads the compiled site to the server then pushes
+   * the uncompiled Jekyll source code to GitHub.
+   *
+   * Usage: `grunt push`
+   */
   grunt.registerTask('push', [
     'ftpush',
     'shell'

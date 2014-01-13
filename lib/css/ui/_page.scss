@@ -38,7 +38,7 @@ img {
 
 }
 
-p > code {
+:not(pre) > code {
   background-color:#f8f8f8;
   border:1px solid #ccc;
   padding:em(1px) em(5px);
