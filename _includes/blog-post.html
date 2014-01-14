@@ -24,9 +24,7 @@
     </div>
 
   {% if modulo == '0' %}
-    {% unless forloop.last %}
-    </div>
-    {% endunless %}
+    {% unless forloop.last %}</div>{% endunless %}
   {% endif %}
 
 </article>

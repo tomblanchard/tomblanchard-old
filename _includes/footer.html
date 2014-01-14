@@ -16,6 +16,7 @@
             </div>
           </div>
         </div><!--
+
      --><div class="grid__item lap-and-up-one-half">
           <div class="site-foot__item island">
             <div class="site-foot__item-head island__bleed">
@@ -24,7 +25,7 @@
             <div class="minimize">
               <div class="site-foot__item-quotes">
                 {% for testimonial in site.testimonials %}
-                  <blockquote class="site-foot__item-quote site-foot__item-quote--{{ forloop.index }} {% if forloop.index == 1 %}site-foot__item-quote--current{% endif %}">
+                  <blockquote class="site-foot__item-quote site-foot__item-quote--{{ forloop.index }} {% if forloop.first %}site-foot__item-quote--current{% endif %}">
                     {{ testimonial.content | markdownify }}
                     <div class="site-foot__item-quote-foot">
                       <i><b>{{ testimonial.name }}</b> of {{ testimonial.company }}</i>
@@ -44,6 +45,7 @@
       <div class="text-wrap-left grid__item lap-and-up-one-half">
         Copyright &copy; {{ site.time | date: '%Y' }}
       </div><!--
+
    --><div class="text-wrap-right grid__item lap-and-up-one-half">
         Designed &amp; Built by Tom Blanchard
       </div>
