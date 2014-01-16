@@ -13,6 +13,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
 
+
+
     /**
      * Start a local server using the compiled Jekyll site directory as the base.
      *
@@ -27,6 +29,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
 
     /**
      * Compile Sass files to CSS files.
@@ -48,6 +51,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Uglify (minify) `main.js` file.
      *
@@ -61,6 +65,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Build Jekyll site.
      *
@@ -72,6 +77,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
 
     /**
      * Minify all HTML / PHP files that Jekyll builds.
@@ -93,6 +99,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Instead of getting Jekyll to rebuild every time a file in `lib` is changed
      * (slow), copy and replace the old `lib` with the new one in the compiled Jekyll
@@ -111,13 +118,13 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Runs tasks against changed watched files.
      *
      * Plugin: http://github.com/gruntjs/grunt-contrib-watch
      */
     watch: {
-
       /**
        * Watch any Sass files, if any are modified, recompile them to CSS.
        */
@@ -178,6 +185,7 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Upload (and replace the old files) the compiled Jekyll site directory to the
      * server.
@@ -204,13 +212,13 @@ module.exports = function(grunt) {
       }
     },
 
+
     /**
      * Run command line tools.
      *
      * Plugin: http://github.com/sindresorhus/grunt-shell
      */
     shell: {
-
       /**
        * Push the uncompiled Jekyll source code to GitHub.
        *
@@ -226,6 +234,8 @@ module.exports = function(grunt) {
         ].join('&&')
       }
     }
+
+
 
 
   });
@@ -244,6 +254,7 @@ module.exports = function(grunt) {
     'htmlmin',
     'watch'
   ]);
+
 
   /**
    * The `push` task, it uploads the compiled site to the server then pushes
