@@ -22,7 +22,8 @@ On this site I use Grunt for a lot of things (short of dressing and feeding me),
 
 Below is my `Gruntfile.js` setup. I am constantly updating this to make things easier so instead of just copy and pasting the latest version I'm feeding the live [file](http://github.com/tomblanchard/tomblanchard.co.uk/blob/master/Gruntfile.js) straight from my [GitHub repository](http://github.com/tomblanchard/tomblanchard.co.uk):
 
-<script src="http://gist-it.appspot.com/github/tomblanchard/tomblanchard.co.uk/blob/master/Gruntfile.js?footer=minimal"></script>
+<script src="http://gist-it.appspot.com/github/tomblanchard/tomblanchard.co.uk/blob/master/Gruntfile.js?footer=minimal">
+</script>
 
 <noscript><div class="flow"><p><a href="http://github.com/tomblanchard/tomblanchard.co.uk/blob/master/Gruntfile.js">No JavaScript? Shame on you! Here's a link to the file.</a></p></div></noscript>
 
