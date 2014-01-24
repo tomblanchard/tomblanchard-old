@@ -3,6 +3,7 @@ permalink: /:categories/:title/
 exclude: ['node_modules', 'Gruntfile.js', 'package.json', '.sass-cache', 'README.md']
 encoding: utf-8
 pygments: true
+excerpt_separator: ""
 
 testimonials:
   - content: 'I have hired Tom frequently to take care of any development based work which passes through Three29Design. Tom gets the job done quickly and properly each time, he’s also happy to try new things out if need be. Both me and my clients are pleased, so that’s job well done!'

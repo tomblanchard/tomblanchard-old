@@ -1,13 +1,12 @@
 ---
-layout: single-blog-post
-date: 2014-01-13 11:17:25
-category: blog
+layout:   "single-blog-post"
+category: "blog"
 
-title: Contagious Grunt-itis
+title:    "Contagious Grunt-itis"
 
-image: contagious-gruntitis.gif
+image:    "contagious-gruntitis.gif"
 
-excerpt: "If you haven't heard of [Grunt](http://gruntjs.com) (if so, where have you been hiding?), it's a task runner powered by JavaScript and [Node.js](http://nodejs.org), don't worry, you don't have to be a JavaScript / Node.js developer to use Grunt"
+excerpt:  "If you haven't heard of [Grunt](http://gruntjs.com) (if so, where have you been hiding?), it's a task runner powered by JavaScript and [Node.js](http://nodejs.org), don't worry, you don't have to be a JavaScript / Node.js developer to use Grunt"
 ---
 
 {{ page.excerpt }} (just like you don't have to be a [Ruby](http://ruby-lang.org) developer to use [Sass](http://sass-lang.com)). You can use it for a **lot** of things thanks to the community for publishing so many plugins, a couple of examples being [Cssmin](http://github.com/gruntjs/grunt-contrib-cssmin) (CSS compression) and [Uglify](http://github.com/gruntjs/grunt-contrib-uglify) (JavaScript minification).

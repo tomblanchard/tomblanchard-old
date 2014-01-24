@@ -1,25 +1,25 @@
 ---
-layout: single-work-item
-date: 2014-01-05 11:17:26
-category: work
+layout:   "single-work-item"
+date:     "2014-01-05 11:17:26"
+category: "work"
 
-title: Sonniballi
+title:    "Sonniballi"
+
+site:     "http://sonniballimusic.com"
+
+excerpt:  "Sonniballi is a recording artist from Ghana, signed with Elijah Records. I worked alongside graphic designer [David Zinyama](http://davidzinyama.com) to develop his website, my role was to convert four Photoshop website design image files into a fully functional, fully responsive, dynamic website and blog using the WordPress platform."
 
 tag:
-- HTML5
-- CSS3
-- Responsive
-- jQuery
-- WordPress
+- "HTML5"
+- "CSS3"
+- "Responsive"
+- "jQuery"
+- "WordPress"
 
 images:
-- sonniballi--1.jpg
-- sonniballi--2.jpg
-- sonniballi--3.jpg
-
-site: http://sonniballimusic.com
-
-excerpt: "Sonniballi is a recording artist from Ghana, signed with Elijah Records. I worked alongside graphic designer [David Zinyama](http://davidzinyama.com) to develop his website, my role was to convert four Photoshop website design image files into a fully functional, fully responsive, dynamic website and blog using the WordPress platform."
+- "sonniballi--1.jpg"
+- "sonniballi--2.jpg"
+- "sonniballi--3.jpg"
 ---
 
 {{ page.excerpt }}

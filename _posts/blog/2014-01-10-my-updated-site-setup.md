@@ -1,13 +1,12 @@
 ---
-layout: single-blog-post
-date: 2014-01-10 11:17:25
-category: blog
+layout:   "single-blog-post"
+category: "blog"
 
-title: My updated site setup
+title:    "My updated site setup"
 
-image: my-updated-site-setup.jpg
+image:    "my-updated-site-setup.jpg"
 
-excerpt: "This site has been live for quite a while now (around six months) and I've only ever published one blog post before this and the purpose of that post was just to announce the new site launch. I never felt"
+excerpt:  "This site has been live for quite a while now (around six months) and I've only ever published one blog post before this and the purpose of that post was just to announce the new site launch. I never felt"
 ---
 
 {{ page.excerpt }} any motivation to blog and I think I know why, it was because how awful my setup was, I wasn't using Jekyll to its full potential and in all honesty, I had no idea how to properly implement Jekyll into the new site design. I wasn't even using the built in blog-aware features, the only purpose I was using Jekyll for was for the templating functionality which isn't very smart when it comes to writing blog posts as I was having to code them in HTML every time.
