@@ -151,20 +151,8 @@ module.exports = function(grunt) {
        * Watch any Jekyll related files, if any are modified, rebuild the Jekyll site.
        */
       jekyll: {
-        files: ['_includes/**/*', '_layouts/**/*', '_plugins/**/*', '_posts/**/*', '*.html', '_config.yml'],
-        tasks: ['jekyll'],
-        options: {
-          spawn: false
-        }
-      },
-
-      /**
-       * Watch any HTML / PHP files in the compiled Jekyll site directory, if any are
-       * modified, reminify them.
-       */
-      htmlmin: {
-        files: '_site/**/*.{html,php}',
-        tasks: ['htmlmin'],
+        files: ['_includes/**/*', '_layouts/**/*', '_plugins/**/*', '_posts/**/*', '*.html', '_config.yml', '_site/**/*.{html,php}'],
+        tasks: ['jekyll', 'htmlmin'],
         options: {
           spawn: false
         }

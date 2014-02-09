@@ -2,7 +2,7 @@
 layout:   "single-blog-post"
 category: "blog"
 
-title:    "How is this done again? #1 - WordPress loop; posts in rows & columns"
+title:    "1How is this done again? #1 - WordPress loop; posts in rows & columns"
 
 image:    "how-is-this-done-again-1.gif"
 
