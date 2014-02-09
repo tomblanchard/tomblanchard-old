@@ -148,7 +148,7 @@ module.exports = function(grunt) {
       },
 
       /**
-       * Watch any Jekyll related files, if any are modified, rebuild the Jekyll site.
+       * Watch any Jekyll related files, if any are modified, rebuild and minify the Jekyll site,
        */
       jekyll: {
         files: ['_includes/**/*', '_layouts/**/*', '_plugins/**/*', '_posts/**/*', '*.html', '_config.yml', '_site/**/*.{html,php}'],
