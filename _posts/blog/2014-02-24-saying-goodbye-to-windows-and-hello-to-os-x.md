@@ -6,10 +6,10 @@ title:    "Saying goodbye to Windows and hello to OS X"
 
 image:    "saying-goodbye-to-windows-and-hello-to-os-x.jpg"
 
-excerpt:  ""
+excerpt:  "Ever since I started out as a front-end developer I've worked on a PC running Windows, it's served me well over the years, despite all the issues that most people in this industry seem to have with"
 ---
 
-Ever since I started out as a front-end developer I've worked on a PC running Windows, it's served me well over the years, despite all the issues that most people in this industry seem to have with the Windows operating system I don't really have anything to complain about.
+{{ page.excerpt }} the Windows operating system I don't really have anything to complain about.
 
 I spent a long time mulling over whether or not I was going to join the Apple bandwagon and get a Mac. Well around a month ago I took the plunge and purchased a 13.3-inch MacBook Air and I couldn't be happier with it, I've waited a few weeks to see if this purchase has turned out to be a good investment and it definitely has. The only thing that's caused some problems is transitioning from Windows to OS X which I fully anticipated considering this is my **first** ever Mac.
 
