@@ -6,10 +6,10 @@ title:    "Sassy, media query specific CSS objects"
 
 image:    "sassy-media-query-specific-css-objects.gif"
 
-excerpt:  ""
+excerpt:  "If you're an advocate of OOCSS (Oriented CSS) then you have most likely worked with Sass before as it makes development of OOCSS a lot more efficient. Here's a simple example of an object (stolen"
 ---
 
-If you're an advocate of OOCSS (Oriented CSS) then you have most likely worked with Sass before as it makes development of OOCSS a lot more efficient. Here's a simple example of an object (stolen / slightly modified from [inuit.css](https://github.com/csswizardry/inuit.css/blob/master/objects/_nav.scss)):
+{{ page.excerpt }} / slightly modified from [inuit.css](https://github.com/csswizardry/inuit.css/blob/master/objects/_nav.scss)):
 
 {% highlight scss %}
 .nav {
