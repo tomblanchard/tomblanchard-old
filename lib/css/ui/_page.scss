@@ -38,6 +38,10 @@ img {
 
 }
 
+li:not(:last-child) {
+  margin-bottom:$base-spacing-unit / 2;
+}
+
 :not(pre) > code {
   background-color:#f8f8f8;
   border:1px solid #ccc;
