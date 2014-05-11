@@ -6,10 +6,10 @@ title:    "Making IE &#60; 9 behave with responsive development"
 
 image:    "making-old-ie-behave-with-responsive-development.gif"
 
-excerpt:  ""
+excerpt:  "Responsive web development can be tricky at the best of times, but even more so if the site in question has to support any version of Internet Explorer below version 9 (most of the time it's just"
 ---
 
-Responsive web development can be tricky at the best of times, but even more so if the site in question has to support any version of Internet Explorer below version 9 (most of the time it's just IE 8 you need to tame due to the low usage statistics of IE <= 7). Old IE makes things harder because media queries (the backbone of responsive websites) aren't supported, so all code inside media query blocks is ignored. Below are the various solutions I've tried out which I wasn't 100% happy with:
+{{ page.excerpt }} IE 8 you need to tame due to the low usage statistics of IE <= 7). Old IE makes things harder because media queries (the backbone of responsive websites) aren't supported, so all code inside media query blocks is ignored. Below are the various solutions I've tried out which I wasn't 100% happy with:
 
 - JS based media query polyfills ([Respond.js](https://github.com/scottjehl/Respond), [css3-mediaqueries.js](https://code.google.com/p/css3-mediaqueries-js/))<br>**- Performance issues, also what about users with no JS and old IE?**
 - [Mobile-first / progressive enhancement](http://www.jonikorpi.com/leaving-old-IE-behind/)<br>**- This is a great solution, I use a similar method on this site, but what if the client insists the layout needs to look the same on both modern browsers and old IE?**
