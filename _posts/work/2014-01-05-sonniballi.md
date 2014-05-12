@@ -5,8 +5,6 @@ category: "work"
 
 title:    "Sonniballi"
 
-site:     "http://sonniballimusic.com"
-
 excerpt:  "Sonniballi is a recording artist from Ghana, signed with Elijah Records. I worked alongside graphic designer [David Zinyama](http://davidzinyama.com) to develop his website, my role was to convert four Photoshop website design image files into a fully functional, fully responsive, dynamic website and blog using the WordPress platform."
 
 tag:
