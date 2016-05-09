@@ -60,7 +60,7 @@ I've started to use a little convention to avoid this problem, it involves creat
 
     <p class="subtitle" style="{{ description_color_style }}">
       {{ collection.description }}
-    </p>""
+    </p>
   </div>
 </div>
 {% endraw %}{% endhighlight %}
