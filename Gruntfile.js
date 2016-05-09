@@ -74,6 +74,7 @@ module.exports = function(grunt) {
     jekyll: {
       dist: {
         options: {
+          bundleExec: true
         }
       }
     },

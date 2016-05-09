@@ -4,4 +4,5 @@ _site
 _grunt.bat
 _grunt-push.bat
 _grunt.command
+_vendor
 node_modules

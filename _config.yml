@@ -1,9 +1,11 @@
 paginate: 6
 permalink: /:categories/:title/
-exclude: ['node_modules', 'Gruntfile.js', 'package.json', '.sass-cache', 'README.md']
+exclude: ['node_modules', 'Gruntfile.js', 'package.json', '.sass-cache', 'README.md', 'Gemfile', 'Gemfile.lock']
 encoding: utf-8
-pygments: true
+highlighter: pygments
 excerpt_separator: ""
+
+gems: [jekyll-paginate]
 
 twitter: tomblanchardcss
 
